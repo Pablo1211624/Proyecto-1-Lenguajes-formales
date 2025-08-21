@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bronc\\OneDrive - Universidad Rafael Landivar\\Documentos\\Landivar\\Tareas 2025\\4to semetre 2025\\Lenguajes\\Proyecto 1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7038FA7A-C675-4A99-B96D-866B3E375D88}|Proyecto 1\\Proyecto 1.pyproj|C:\\Users\\bronc\\OneDrive - Universidad Rafael Landivar\\Documentos\\Landivar\\Tareas 2025\\4to semetre 2025\\Lenguajes\\Proyecto 1\\Proyecto 1\\Proyecto_1.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{7038FA7A-C675-4A99-B96D-866B3E375D88}|Proyecto 1\\Proyecto 1.pyproj|solutionrelative:Proyecto 1\\Proyecto_1.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Proyecto_1.py",
+              "DocumentMoniker": "C:\\Users\\bronc\\OneDrive - Universidad Rafael Landivar\\Documentos\\Landivar\\Tareas 2025\\4to semetre 2025\\Lenguajes\\Proyecto 1\\Proyecto 1\\Proyecto_1.py",
+              "RelativeDocumentMoniker": "Proyecto 1\\Proyecto_1.py",
+              "ToolTip": "C:\\Users\\bronc\\OneDrive - Universidad Rafael Landivar\\Documentos\\Landivar\\Tareas 2025\\4to semetre 2025\\Lenguajes\\Proyecto 1\\Proyecto 1\\Proyecto_1.py*",
+              "RelativeToolTip": "Proyecto 1\\Proyecto_1.py*",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAIwKgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-20T16:45:25.002Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
