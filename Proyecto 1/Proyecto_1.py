@@ -1,17 +1,8 @@
 
 from datetime import datetime
+origen = "prestamos.lfa"
+destino = "reportes.html"
 
-class Libro:
-    #clase libro
-    def __init__(self, id_libro, titulo) :
-        self.id_libro=id_libro
-        self.titulo=titulo
-
-class Persona:
-    #clase persona
-    def __init__(self, id_usuario, nombre):
-        self.id_usuario=id_usuario
-        self.nombre=nombre
 
 class Prestamos:
     #clase prestamos
@@ -51,9 +42,6 @@ def Validar_Alfabeto(linea:str, linea_error:int ):
 
 #metodo que valida la estructura de la fecha
 def ValidarFecha(fecha: str) -> bool:
-
-    if fecha.strip()=="":
-        return True #el libro no ha sido devuelto, esta vacio la fecha de regreso
     try:
         datetime.strptime(fecha, "%Y-%m-%d")
         return True
@@ -88,6 +76,7 @@ def cargar_prestamos(archivo):
             p = Prestamos(id_usuario.strip(), nombre_usuario.strip(), id_libro.strip(), titulo_libro.strip(), 
                           fecha_prestamo.strip(), fecha_devolucion.strip())
 
+  
             prestamos.append(p)
 
 def historial_prestamos():
@@ -163,22 +152,57 @@ def prestamos_vencidos():
     html += "</pre>\n"
     return html
 
-def crear_html(nombre_archivo="reportes.html"):
-    cargar_prestamos("prestamos.lfa")
-    with open(nombre_archivo,"w", encoding="utf-8") as f:
+opc = 1
+ArchivoSeCargo = False #El archivo inicia el programa sin cargarse
+if __name__ == "__main__":
+    with open(destino,"w+", encoding="utf-8") as f:
         f.write("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Reporte de Prestamos</title></head><body>")
         f.write("<h1>Reporte de Biblioteca</h1>")
-        f.write(historial_prestamos())
-        f.write(listado_usuario())
-        f.write(listado_libros())
-        f.write(estadisticas())
-        f.write(prestamos_vencidos())
+        while(opc!=7):
+            print("Ingrese la opcion que desea realizar:\n1.Cargar Archivo\n2.General Historial\n3.Listado de usuarios\n4.Listado de libros\n5.Estadisticas\n6.Generar Prestamos vencidos\n7.Salir")
+            try:
+                opc = int(input("Eleccion: "))
+            except ValueError:
+                print("Error intento ingresar un simbolo invalido\n")
+            if opc == 1:
+                cargar_prestamos(origen)
+                ArchivoSeCargo = True
+                print("Archivo cargado correctamente.\n")
+            elif opc ==2:
+                if ArchivoSeCargo == True:
+                    f.write(historial_prestamos())
+                    print("Historial de reportes guardado correctamente.\n")
+                else:
+                    print("No se ha inicializado aun el archivo\n")
+            elif opc==3:
+                if ArchivoSeCargo == True:
+                    f.write(listado_usuario())
+                    print("Lista de usuarios guardado correctamente.\n")
+                else:
+                    print("No se ha inicializado aun el archivo\n")
+            elif opc==4:
+                if ArchivoSeCargo == True:
+                    f.write(listado_libros())
+                    print("Lista de Libros guardado correctamente.\n")
+                else:
+                    print("No se ha inicializado aun el archivo\n")
+            elif opc==5:
+                if ArchivoSeCargo == True:
+                    f.write(estadisticas())
+                    print("Estadisticas guardadas correctamente.\n")
+                else:
+                    print("No se ha inicializado aun el archivo\n")
+            elif opc==6:
+                if ArchivoSeCargo == True:
+                    f.write(prestamos_vencidos())
+                    print("Lista de prestamos vencidos correctamente.\n")
+                else:
+                    print("No se ha inicializado aun el archivo\n")
+            elif opc==7:
+                print("Saliendo...")
+            else:
+                print("Error opcion invalida\n")
+
         f.write("</body></html>")
-    
-    print(f"Archivo {nombre_archivo} creado exitosamente!")
-
-if __name__ == "__main__":
-    crear_html()
-
 
 
